@@ -23,7 +23,7 @@
   background: var(--White, #FFF);
 
   text-decoration: none;
-  /* position:relative; */
+  position:relative;
 
   display: block;
 }
@@ -48,12 +48,14 @@
 
 .row .logo{
   position: absolute;
-  translate: 73px 75px;
+  top: 75px;
+  left: 73px;
 }
 
 .column .logo{
   position: absolute;
-  translate: 64px 14px;
+  top: 14px;
+  left: 64px;
 }
 
 .logo img{
@@ -67,7 +69,8 @@
 
 .row .description{
   position: absolute;
-  translate: 28px 155px;
+  top: 155px;
+  left: 28px;
 }
 
 .row .description p{
@@ -86,7 +89,8 @@
 
 .column .description{
   position: absolute;
-  translate: 21px 66px;
+  left: 21px;
+  top: 66px;
 }
 
 .column .description p{
@@ -108,12 +112,14 @@
 
 .row .product-image{
   position: absolute;
-  translate: 252px 20px;
+  top: 20px;
+  left: 252px;
 }
 
 .column .product-image{
   position: absolute;
-  translate: 23px 100px;
+  left: 23px;
+  top: 100px;
 }
 
 .product-image img{
@@ -131,19 +137,19 @@
 }
 
 .view-more{
-
   /* button 크기 변화에 대응 쉽게 만들기 */
   width:112px;
   height:42px;
 
   /* a 태그에 position: relative 주지도 않았는데 a 태그 기준으로 위치 잡힘.. */
   position: absolute;
-  translate: 20px 248px;
+  bottom: 20px;
+  left: 20px;
 
   overflow: hidden;
 }
 
-.view-more img{
+.b1{
   /* block 지정 안 해주면 view-more 박스랑 buy 박스 사이에 간격 생기는데 왜일까. */
   display: block;
 }
@@ -151,22 +157,29 @@
 /* key point : buy 박스가 view-more 박스 안에 들어있어야 hover 효과를 줄 수 있음 */
 .row a:hover .b1, .column a:hover .b1{
   position: absolute;
-  translate: -100% -100%;
+  left:-42px;
+}
+
+.row a:focus .b1, .column a:focus .b1{
+  position: absolute;
+  left:-42px;
 }
 
 .buy{
-  border:0px;
-  padding:0px;
-
   width:112px;
   height:42px;
   
   background: var(--blue-600, #0074E9);
 
-  
+  padding: 12px 18px 13px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .buy p{
+  padding-top: 2.5px;
   color: #FFF;
 
   /* Text/Medium/14 */
@@ -180,5 +193,7 @@
 }
 
 .buy img{
+  width: 6px;
+  height: 10px;
   display:inline;
 }
