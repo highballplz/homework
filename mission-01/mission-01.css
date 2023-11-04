@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:0px;
+}
+
+.product-list{
+  list-style-type: none;
+
+  width: 600px;
+
+  display:flex;
+  flex-flow: row wrap;
+}
+
+
+
+
+.row a, .column a{
+  margin:8px 8px;
+  border: 1px solid var(--gray-500, #C4C4C4);
+  background: var(--White, #FFF);
+
+  text-decoration: none;
+  /* position:relative; */
+
+  display: block;
+}
+
+.row a{
+  width: 502px;
+  height:310px;
+}
+
+.column a{
+  width: 243px;
+  height:310px;
+}
+
+.row a:hover, .column a:hover{
+  border: 1px solid var(--blue-600, #0074E9);
+}
+
+
+
+
+
+.row .logo{
+  position: absolute;
+  translate: 73px 75px;
+}
+
+.column .logo{
+  position: absolute;
+  translate: 64px 14px;
+}
+
+.logo img{
+  /* block 지정 안 해주면 .logo의 height가 .logo img보다 조금 더 길어지는데 왜일까 */
+  display:block;
+}
+
+
+
+
+
+.row .description{
+  position: absolute;
+  translate: 28px 155px;
+}
+
+.row .description p{
+  width: 200px;
+  height: 37px;
+
+  text-align: center;
+  color: var(--gray-800, #4E4E4E);
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 36px */
+}
+
+.column .description{
+  position: absolute;
+  translate: 21px 66px;
+}
+
+.column .description p{
+  width: 200px;
+  height: 27px;
+
+  color: var(--grayscale-gray-5, #555);
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+}
+
+
+
+
+
+.row .product-image{
+  position: absolute;
+  translate: 252px 20px;
+}
+
+.column .product-image{
+  position: absolute;
+  translate: 23px 100px;
+}
+
+.product-image img{
+  display:block;
+}
+
+
+
+
+
+
+/* a 태그 안에 a 태그, a 태그 안에 button 태그, button 안에 button 안 되는지?!?!?!??!?!?!?!? */
+.button{
+  cursor:pointer;
+}
+
+.view-more{
+
+  /* button 크기 변화에 대응 쉽게 만들기 */
+  width:112px;
+  height:42px;
+
+  /* a 태그에 position: relative 주지도 않았는데 a 태그 기준으로 위치 잡힘.. */
+  position: absolute;
+  translate: 20px 248px;
+
+  overflow: hidden;
+}
+
+.view-more img{
+  /* block 지정 안 해주면 view-more 박스랑 buy 박스 사이에 간격 생기는데 왜일까. */
+  display: block;
+}
+
+/* key point : buy 박스가 view-more 박스 안에 들어있어야 hover 효과를 줄 수 있음 */
+.row a:hover .b1, .column a:hover .b1{
+  position: absolute;
+  translate: -100% -100%;
+}
+
+.buy{
+  border:0px;
+  padding:0px;
+
+  width:112px;
+  height:42px;
+  
+  background: var(--blue-600, #0074E9);
+
+  
+}
+
+.buy p{
+  color: #FFF;
+
+  /* Text/Medium/14 */
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 16.8px */
+
+  display:inline;
+}
+
+.buy img{
+  display:inline;
+}
