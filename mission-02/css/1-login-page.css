@@ -1,0 +1,9 @@
+.login-page{
+  background: url(../images/bg-img.png) center / cover no-repeat;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

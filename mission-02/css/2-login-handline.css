@@ -1,0 +1,38 @@
+/* flex로 간격 따로따로 주는 법 알아보기 */
+.login-handline{
+  margin-bottom: 100px;
+}
+
+.login-title{
+  color: var(--grayscale-white);
+  text-align: center;
+  font-family: SpoqaHanSans;
+  font-size: var(--section-heading);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  text-transform: uppercase;
+}
+
+.login-description-en{
+  color: var(--grayscale-white);
+  text-align: center;
+  font-family: SpoqaHanSans;
+  font-size: var(--font-lg);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+}
+
+.login-description-ko{
+  color: var(--grayscale-white);
+  text-align: center;
+  font-family: SpoqaHanSans;
+  font-size: var(--font-xs);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.24px;
+}

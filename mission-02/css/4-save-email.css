@@ -1,0 +1,17 @@
+.save-email{
+  margin-bottom: 70px;
+}
+
+.save-email input{
+  background-image: url(../images/checkbox.svg) no-repeat;
+}
+
+.save-email label{
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--font-xs);
+  font-style: normal;
+  font-weight: 400;
+  /* line-height: normal; */
+  letter-spacing: -0.24px;
+}

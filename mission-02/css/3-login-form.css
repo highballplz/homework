@@ -1,0 +1,45 @@
+.login-email, .login-pwd{
+  padding-bottom: 11px;
+}
+
+.login-email{
+  margin-bottom: 31px;
+}
+
+.login-pwd{
+  margin-bottom: 14px;
+}
+
+
+
+
+
+.login-form label{
+  display: block;
+
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--card-dialob-element);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.26px;
+}
+
+.login-form input{
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--grayscale-white);
+  width: 540px;
+  /* padding-bottom: 15px; */
+}
+
+.login-form input, .login-form input::placeholder{
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--font-lg);
+  font-style: normal;
+  font-weight: 400;
+  /* line-height: normal; */
+  letter-spacing: -0.36px;
+}
