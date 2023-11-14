@@ -1,9 +1,15 @@
 .save-email{
   margin-bottom: 70px;
+
+  display: flex;
+  /* 이렇게 해야 정렬이 맞는 느낌인데 왜 그런지 생각해보기 */
+  align-items: flex-start;
 }
 
 .save-email input{
-  background-image: url(../images/checkbox.svg) no-repeat;
+  margin: 0;
+  /* background-image 왜 안 넣어지지.. */
+  background-image: url(../images/check-save.svg) no-repeat;
 }
 
 .save-email label{
@@ -12,6 +18,8 @@
   font-size: var(--font-xs);
   font-style: normal;
   font-weight: 400;
-  /* line-height: normal; */
+  line-height: normal;
   letter-spacing: -0.24px;
+
+  margin-left: 6px;
 }

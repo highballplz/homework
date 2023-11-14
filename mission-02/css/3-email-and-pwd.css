@@ -1,0 +1,127 @@
+/* 컨테이너 스타일링 */
+.login-email, .login-pwd{
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--font-lg);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  position: relative;
+}
+
+.login-email{
+  margin-bottom: 31px;
+}
+
+.login-pwd{
+  margin-bottom: 14px;
+}
+
+/* input 스타일링 */
+.login-email input, .login-pwd input{
+  background-color: transparent;
+  border: 0;
+  
+  width: 540px;
+  border-bottom: 1px solid var(--grayscale-white);
+
+  padding: 20px 0 15px 8px;
+  
+  /* .login-email, .login-pwd에서 이미 부여한 속성들이지만 input은 상속을 거절하는 듯.. */
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--font-lg);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+}
+
+/* label 스타일링 */
+.login-email label, .login-pwd label{
+  position: absolute;
+  top: 20px;
+  left: 8px;
+}
+
+/* 경고 문구 스타일링*/
+.login-email p, .login-pwd p{
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--card-dialob-element);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.26px;
+
+  padding-top: 5px;
+  padding-left: 8px;
+
+  display: none;
+}
+
+/* valid/invalid 이미지 스타일링 */
+.valid, .invalid{
+  position: absolute;
+  top: 20px;
+  /* transform: translateY(-50%);도 되는지 확인하기 */
+  right: 8px;
+
+  /* display: none; */
+}
+
+/* visible/invisible 버튼 스타일링 */
+#hide-or-show{
+  border: 0;
+  padding: 0;
+
+  position: absolute;
+  top: 20px;
+  right: 8px;
+
+  width: 16px;
+  height: 16px;
+
+  background: url('../images/input-password-show.png');
+  
+  cursor: pointer;
+  /* display: none; */
+}
+
+#hide-or-show.hide{
+  background: url('../images/input-password-hide.png');
+}
+
+/* input이 focus 되었을 때 outline 스타일링 */
+.login-email input:focus,
+.login-pwd input:focus{
+  outline: var(--primary-blue-1) solid 4px;
+}
+
+/* input이 focus 되었을 때 label 스타일링 */
+/* ~는 sibling 뜻함 */
+/* 단 여기서 ~ 쓰려면 input이 label보다 먼저 마크업 돼있어야 함에 주의!! */
+.login-email input:focus ~ label,
+.login-email input:valid ~ label,
+.login-pwd input:focus ~ label,
+.login-pwd input:valid ~ label{
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--card-dialob-element);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.26px;
+
+  top: 0;
+  left: 0;
+
+  transition: 200ms;
+}
+
+/* 그냥 invalid면 unfocused 상태에서도 경고메시지 뜸*/
+.is--invalid .form-message {
+  
+}
