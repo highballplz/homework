@@ -41,6 +41,12 @@
   letter-spacing: -0.36px;
 }
 
+/* input이 focus 되었을 때 outline 스타일링 */
+.login-email input:focus,
+.login-pwd input:focus{
+  outline: var(--primary-blue-1) solid 4px;
+}
+
 /* ------------------------------------------------------------------- */
 
 /* label 스타일링 */
@@ -48,6 +54,30 @@
   position: absolute;
   top: 20px;
   left: 8px;
+}
+
+/* input이 focus 되었을 때 label 스타일링 */
+/* ~는 sibling 뜻함 */
+/* 단 여기서 ~ 쓰려면 input이 label보다 먼저 마크업 돼있어야 함에 주의!! */
+/* input에 한 글자 이상 차 있을 조건 표현하는 가상클래스 몰라서
+ email은 text type + required 주고 password는 minlength 1로 설정한 뒤
+ valid 가상클래스 씀 */
+.login-email input:focus ~ label,
+.login-email input:valid ~ label,
+.login-pwd input:focus ~ label,
+.login-pwd input:valid ~ label{
+  color: var(--grayscale-white);
+  font-family: SpoqaHanSans;
+  font-size: var(--card-dialob-element);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.26px;
+
+  top: 0;
+  left: 0;
+
+  transition: 200ms;
 }
 
 /* ------------------------------------------------------------------- */
@@ -145,36 +175,4 @@
 
 .login-pwd input:focus ~ #hide-or-show{
   display: block;
-}
-
-/* ------------------------------------------------------------------- */
-
-/* input이 focus 되었을 때 outline 스타일링 */
-.login-email input:focus,
-.login-pwd input:focus{
-  outline: var(--primary-blue-1) solid 4px;
-}
-
-/* input이 focus 되었을 때 label 스타일링 */
-/* ~는 sibling 뜻함 */
-/* 단 여기서 ~ 쓰려면 input이 label보다 먼저 마크업 돼있어야 함에 주의!! */
-/* input에 한 글자 이상 차 있을 조건 표현하는 가상클래스 몰라서
- email은 text type + required 주고 password는 minlength 1로 설정한 뒤
- valid 가상클래스 씀 */
-.login-email input:focus ~ label,
-.login-email input:valid ~ label,
-.login-pwd input:focus ~ label,
-.login-pwd input:valid ~ label{
-  color: var(--grayscale-white);
-  font-family: SpoqaHanSans;
-  font-size: var(--card-dialob-element);
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.26px;
-
-  top: 0;
-  left: 0;
-
-  transition: 200ms;
 }
