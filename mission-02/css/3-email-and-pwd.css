@@ -19,6 +19,8 @@
   margin-bottom: 14px;
 }
 
+/* ------------------------------------------------------------------- */
+
 /* input 스타일링 */
 .login-email input, .login-pwd input{
   background-color: transparent;
@@ -39,6 +41,8 @@
   letter-spacing: -0.36px;
 }
 
+/* ------------------------------------------------------------------- */
+
 /* label 스타일링 */
 .login-email label, .login-pwd label{
   position: absolute;
@@ -46,8 +50,10 @@
   left: 8px;
 }
 
-/* 경고 문구 스타일링*/
-.login-email p, .login-pwd p{
+/* ------------------------------------------------------------------- */
+
+/* invalid-msg 디폴트*/
+#email-invalid-msg, #pwd-invalid-msg{
   color: var(--grayscale-white);
   font-family: SpoqaHanSans;
   font-size: var(--card-dialob-element);
@@ -62,17 +68,47 @@
   display: none;
 }
 
-/* valid/invalid 이미지 스타일링 */
-.valid, .invalid{
+/* invalid-msg 활성화*/
+#email-invalid-msg.show,
+#pwd-invalid-msg.show{
+  display: block;
+}
+
+/* ------------------------------------------------------------------- */
+
+/* valid-or-invalid 버튼 기본값*/
+#email-valid-or-invalid,
+#pwd-valid-or-invalid{
   position: absolute;
   top: 20px;
   /* transform: translateY(-50%);도 되는지 확인하기 */
   right: 8px;
 
-  /* display: none; */
+  width: 16px;
+  height: 16px;
+
+  background: url('../images/input-valid.svg');
 }
 
-/* visible/invisible 버튼 스타일링 */
+/* email-valid-or-invalid 버튼 활성화*/
+#email-valid-or-invalid.invalid,
+#pwd-valid-or-invalid.invalid{
+  background: url('../images/input-invalid.png');
+}
+
+/* input에 한 글자 이상 차 있을 조건 표현하는 가상클래스 몰라서
+ email은 text type + required 주고 password는 minlength 1로 설정한 뒤
+ invalid 가상클래스 씀 */
+.login-email input:invalid ~ #email-invalid-msg,
+.login-email input:invalid ~ #email-valid-or-invalid,
+.login-pwd input:invalid ~ #pwd-invalid-msg,
+.login-pwd input:invalid ~ #pwd-valid-or-invalid{
+  display: none;
+}
+
+/* ------------------------------------------------------------------- */
+
+/* hide-or-show 버튼 디폴트 */
 #hide-or-show{
   border: 0;
   padding: 0;
@@ -87,12 +123,31 @@
   background: url('../images/input-password-show.png');
   
   cursor: pointer;
-  /* display: none; */
 }
 
+/* hide-or-show 버튼 활성화 */
+/* .hide 왜 붙여써야 되는지 */
 #hide-or-show.hide{
   background: url('../images/input-password-hide.png');
 }
+
+/* input에 한 글자 이상 차 있을 조건 표현하는 가상클래스 몰라서
+ email은 text type + required 주고 password는 minlength 1로 설정한 뒤
+ valid 가상클래스 씀 */
+.login-pwd input:valid ~ #hide-or-show{
+  right: 32px;
+  transition: 200ms;
+}
+
+.login-pwd input:invalid ~ #hide-or-show{
+  display: none;
+}
+
+.login-pwd input:focus ~ #hide-or-show{
+  display: block;
+}
+
+/* ------------------------------------------------------------------- */
 
 /* input이 focus 되었을 때 outline 스타일링 */
 .login-email input:focus,
@@ -103,6 +158,9 @@
 /* input이 focus 되었을 때 label 스타일링 */
 /* ~는 sibling 뜻함 */
 /* 단 여기서 ~ 쓰려면 input이 label보다 먼저 마크업 돼있어야 함에 주의!! */
+/* input에 한 글자 이상 차 있을 조건 표현하는 가상클래스 몰라서
+ email은 text type + required 주고 password는 minlength 1로 설정한 뒤
+ valid 가상클래스 씀 */
 .login-email input:focus ~ label,
 .login-email input:valid ~ label,
 .login-pwd input:focus ~ label,
@@ -119,9 +177,4 @@
   left: 0;
 
   transition: 200ms;
-}
-
-/* 그냥 invalid면 unfocused 상태에서도 경고메시지 뜸*/
-.is--invalid .form-message {
-  
 }

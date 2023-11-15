@@ -4,7 +4,13 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
 
-  /* padding-top: 250px; */
+  /* align-items 단점
+  (1) email-invalid-msg 떴을 때 login-inner의 위치가 살짝 위로 올라감.
+  (2) 이메일과 패스워드 입력창이 중앙에서 좀 내려간 지점에 위치함. */
+  /* align-items: center; */
+
+  /* padding-top 단점
+  : 개발자도구 띄웠을 때 아래가 짤림 */
+  padding-top: 200px;
 }

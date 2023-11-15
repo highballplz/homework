@@ -1,4 +1,3 @@
-let inputPwd=document.getElementById('input-pwd');
 let hideOrShow=document.getElementById('hide-or-show');
 
 function showHide(){

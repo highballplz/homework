@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mission-02</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script src="script.js" defer></script>
+  <script src="js/validate.js" defer></script>
+  <script src="js/showHide.js" defer></script>
+
 
 </head>
 
@@ -27,28 +29,31 @@
       
           <legend class="sr-only">로그인</legend>
           
-          <div class="login-email is--focus">
-            <input type="email"
+          <div class="login-email">
+            <input type="text"
             id="input-email"
-            required/>
+            required
+            oninput="validateEmail();"
+            autocomplete="off"/>
             <label for="input-email">이메일</label>
-            <p>이메일 입력 방법이 잘못 되었습니다. (예: user@domain.io)</p>
-            <img src="images/input-valid.svg" alt="" class="valid"/>
-            <img src="images/input-invalid.png" alt="" class="invalid"/>
+            <p id="email-invalid-msg">이메일 입력 방법이 잘못 되었습니다. (예: user@domain.io)</p>
+            <div id="email-valid-or-invalid"></div>
           </div>
           
           <div class="login-pwd">
             <input type="password"
             id="input-pwd"
             required
-            minlength="6"/>
+            minlength="1"
+            oninput="validatePwd();"
+            autocomplete="off"/>
             <label for="input-pwd">패스워드</label>
-            <p>패스워드는 숫자, 영어 조합 6자 이상 입력해야 합니다.</p>
-            <!-- <img src="images/input-valid.svg" alt="" class="valid"/>
-            <img src="images/input-invalid.png" alt="" class="invalid"/> -->
-            <!-- button에 준 이 id를 그냥 class로 줘도 되는지. -->
-            <!-- onclick 속성 넣으니까 패스워드 인풋창에서 focus 없어져도 label 작아진 채로 머무름! 왜지?-->
-            <button id="hide-or-show" onclick="showHide();"></button>
+            <p id="pwd-invalid-msg">패스워드는 숫자, 영어 조합 6자 이상 입력해야 합니다.</p>
+            <div id="pwd-valid-or-invalid"></div>
+            <!-- button에 class가 아닌 id를 줘야 나중에 이 button에 class 추가해줬을 때
+              id.class 형태로 추가된 class에 attribute 줄 수 있음 (맞나..?)-->
+            <!-- button type을 button으로 해줘야 form 안에 있어도 submit 안 됨. -->
+            <button type="button" id="hide-or-show" onclick="showHide();"></button>
           </div>
           
           <div class="save-email">
